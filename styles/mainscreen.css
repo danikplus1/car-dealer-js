@@ -1,0 +1,77 @@
+/* car-info styles */
+
+#main {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  grid-gap: 20px;
+}
+
+.car-profile {
+  border: 1px solid black;
+}
+
+.car-info {
+  display: grid;
+  grid-template-columns: repeat(6 auto);
+  grid-template-rows: repeat(4 auto);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.car-info li {
+  justify-self: center;
+}
+.car-img {
+  grid-column: 1 / span 6;
+  grid-row: 1;
+  margin: 0 auto;
+}
+
+.car-brand,
+.car-model,
+.car-year {
+  grid-row: 2;
+}
+
+.car-mileage,
+.car-engine-power {
+  grid-row: 3;
+}
+
+.car-brand {
+  grid-column: 1 / span 1;
+}
+
+.car-model {
+  grid-column: 2 / span 2;
+}
+
+.car-year {
+  grid-column: 4 / span 4;
+}
+
+.car-mileage {
+  grid-column: 1 / span 1;
+  justify-self: right;
+  padding-left: 25px;
+}
+
+.car-engine-power {
+  grid-column: 3 / span 3;
+  justify-self: left;
+  padding-left: 25px;
+}
+
+.car-price {
+  grid-row: 4;
+  grid-column: 2 / span 2;
+  justify-self: right;
+}
+
+/* hide styles */
+
+.hide {
+  display: none;
+}
