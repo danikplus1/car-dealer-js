@@ -6,7 +6,7 @@
     "brand": "Toyota",
     "year": 2018,
     "model": "Camry",
-    "engine_power": 1.8,
+    "engine": 1.8,
     "mileage": 50000
   },
   {
@@ -16,7 +16,7 @@
     "brand": "Honda",
     "year": 2020,
     "model": "Accord",
-    "engine_power": 2.0,
+    "engine": 2.0,
     "mileage": 35000
   },
   {
@@ -26,7 +26,7 @@
     "brand": "Ford",
     "year": 2017,
     "model": "Focus",
-    "engine_power": 1.6,
+    "engine": 1.6,
     "mileage": 60000
   },
   {
@@ -36,7 +36,7 @@
     "brand": "Chevrolet",
     "year": 2019,
     "model": "Malibu",
-    "engine_power": 1.9,
+    "engine": 1.9,
     "mileage": 40000
   },
   {
@@ -46,7 +46,7 @@
     "brand": "Nissan",
     "year": 2020,
     "model": "Altima",
-    "engine_power": 1.6,
+    "engine": 1.6,
     "mileage": 30000
   },
   {
@@ -56,7 +56,7 @@
     "brand": "Volkswagen",
     "year": 2018,
     "model": "Jetta",
-    "engine_power": 1.6,
+    "engine": 1.6,
     "mileage": 55000
   },
   {
@@ -66,7 +66,7 @@
     "brand": "BMW",
     "year": 2021,
     "model": "3 Series",
-    "engine_power": 2.2,
+    "engine": 2.2,
     "mileage": 25000
   },
   {
@@ -76,7 +76,7 @@
     "brand": "Kia",
     "year": 2019,
     "model": "Optima",
-    "engine_power": 1.8,
+    "engine": 1.8,
     "mileage": 45000
   },
   {
@@ -86,7 +86,7 @@
     "brand": "Mazda",
     "year": 2020,
     "model": "Mazda6",
-    "engine_power": 1.8,
+    "engine": 1.8,
     "mileage": 38000
   },
   {
@@ -96,7 +96,7 @@
     "brand": "Audi",
     "year": 2019,
     "model": "A4",
-    "engine_power": 2.0,
+    "engine": 2.0,
     "mileage": 32000
   }
 ]

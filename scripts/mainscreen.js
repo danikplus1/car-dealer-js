@@ -32,23 +32,15 @@ document.addEventListener("DOMContentLoaded", function () {
         $mileage.classList.add("car-mileage");
         $mileage.textContent = `Mileage: ${car.mileage} km`;
 
-        const $engine_power = document.createElement("li");
-        $engine_power.classList.add("car-engine-power");
-        $engine_power.textContent = `Engine power: ${car.engine_power} km`;
+        const $engine = document.createElement("li");
+        $engine.classList.add("car-engine");
+        $engine.textContent = `Engine power: ${car.engine}`;
 
         const $price = document.createElement("li");
         $price.classList.add("car-price");
         $price.textContent = `Price: ${car.price} zl`;
 
-        $carInfo.append(
-          $img,
-          $brand,
-          $model,
-          $year,
-          $mileage,
-          $engine_power,
-          $price
-        );
+        $carInfo.append($img, $brand, $model, $year, $mileage, $engine, $price);
         $article.append($carInfo);
         $main.append($article);
 
@@ -56,13 +48,29 @@ document.addEventListener("DOMContentLoaded", function () {
 
         $article.addEventListener("click", function () {
           $article.classList.add("explorer");
-
           let $arrayArticle = document.getElementsByClassName("car-profile");
           for (let i = 0; i < $arrayArticle.length; i++) {
             if (!$arrayArticle[i].classList.contains("explorer")) {
               $arrayArticle[i].classList.add("hide");
             }
           }
+          const hiddenElements = document.querySelectorAll(".hide");
+          hiddenElements.forEach(function (element) {
+            element.remove();
+          });
+          // change title name after click
+          const $carBrand = document.querySelector(".car-brand");
+          let carBrandText = $carBrand.textContent;
+          carBrandText = carBrandText.replace("Brand: ", "");
+          const $carModel = document.querySelector(".car-model");
+          let carModelText = $carModel.textContent;
+          carModelText = carModelText.replace("Model: ", "");
+          document.title = `${carBrandText} ${carModelText} - Car Details`;
+          // delete display:grid from #main
+          const $main = document.getElementById("main");
+          $main.style.display = "block";
+          const $carInfo = document.querySelector(".car-info");
+          $carInfo.style.display = "block";
         });
       });
     })
