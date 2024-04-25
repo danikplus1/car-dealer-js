@@ -2,7 +2,7 @@
   {
     "number": 1,
     "price": 25000,
-    "image": "https://picsum.photos/400/200",
+    "image": "https://picsum.photos/400/200?random=1",
     "brand": "Toyota",
     "year": 2018,
     "model": "Camry",
@@ -12,7 +12,7 @@
   {
     "number": 2,
     "price": 30000,
-    "image": "https://picsum.photos/400/200",
+    "image": "https://picsum.photos/400/200?random=2",
     "brand": "Honda",
     "year": 2020,
     "model": "Accord",
@@ -22,7 +22,7 @@
   {
     "number": 3,
     "price": 18000,
-    "image": "https://picsum.photos/400/200",
+    "image": "https://picsum.photos/400/200?random=3",
     "brand": "Ford",
     "year": 2017,
     "model": "Focus",
@@ -32,7 +32,7 @@
   {
     "number": 4,
     "price": 35000,
-    "image": "https://picsum.photos/400/200",
+    "image": "https://picsum.photos/400/200?random=4",
     "brand": "Chevrolet",
     "year": 2019,
     "model": "Malibu",
@@ -42,7 +42,7 @@
   {
     "number": 5,
     "price": 28000,
-    "image": "https://picsum.photos/400/200",
+    "image": "https://picsum.photos/400/200?random=5",
     "brand": "Nissan",
     "year": 2020,
     "model": "Altima",
@@ -52,7 +52,7 @@
   {
     "number": 6,
     "price": 22000,
-    "image": "https://picsum.photos/400/200",
+    "image": "https://picsum.photos/400/200?random=6",
     "brand": "Volkswagen",
     "year": 2018,
     "model": "Jetta",
@@ -62,7 +62,7 @@
   {
     "number": 7,
     "price": 32000,
-    "image": "https://picsum.photos/400/200",
+    "image": "https://picsum.photos/400/200?random=7",
     "brand": "BMW",
     "year": 2021,
     "model": "3 Series",
@@ -72,7 +72,7 @@
   {
     "number": 8,
     "price": 24000,
-    "image": "https://picsum.photos/400/200",
+    "image": "https://picsum.photos/400/200?random=8",
     "brand": "Kia",
     "year": 2019,
     "model": "Optima",
@@ -82,7 +82,7 @@
   {
     "number": 9,
     "price": 26000,
-    "image": "https://picsum.photos/400/200",
+    "image": "https://picsum.photos/400/200?random=9",
     "brand": "Mazda",
     "year": 2020,
     "model": "Mazda6",
@@ -92,7 +92,7 @@
   {
     "number": 10,
     "price": 30000,
-    "image": "https://picsum.photos/400/200",
+    "image": "https://picsum.photos/400/200?random=10",
     "brand": "Audi",
     "year": 2019,
     "model": "A4",

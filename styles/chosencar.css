@@ -1,3 +1,47 @@
-#main .explorer {
-  width: 100 hv;
+.explorer .car-info {
+  grid-template-columns: 55% 15% 15% 15%;
+  grid-template-areas:
+    "img brand model year"
+    "img mileage engine price";
+}
+
+.explorer .car-img {
+  width: 100%;
+  justify-self: left;
+  grid-area: img;
+}
+
+.explorer .car-brand {
+  grid-area: brand;
+}
+
+.explorer .car-model {
+  grid-area: model;
+}
+
+.explorer .car-year {
+  grid-area: year;
+}
+
+.explorer .car-mileage {
+  grid-area: mileage;
+}
+
+.explorer .car-engine {
+  grid-area: engine;
+}
+.explorer .car-price {
+  grid-area: price;
+}
+
+.explorer .car-brand,
+.explorer .car-model,
+.explorer .car-year,
+.explorer .car-mileage,
+.explorer .car-engine,
+.explorer .car-price,
+.explorer .car-info {
+  align-self: center;
+  border: 1px solid red;
+  font-size: 24px;
 }
