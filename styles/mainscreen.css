@@ -70,3 +70,11 @@
 .hide {
   display: none;
 }
+
+.client-form {
+  order: 3;
+}
+
+.car-profile .explorer {
+  order: 0;
+}
