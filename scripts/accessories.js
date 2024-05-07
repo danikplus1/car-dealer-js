@@ -1,10 +1,11 @@
+import showTotalPrice from "./showTotalPrice.js";
+
 export default function accBlock() {
-  const $acc = document.createElement("div");
-  const $tires = document.createElement("div");
-  const $tiresInfo = document.createElement("p");
-  $tiresInfo.textContent = "Winter tires 2000 PLN";
-  const $tiresButton = document.createElement("button");
-  $tiresButton.textContent = "+";
+  const $acc = document.querySelector(".acc");
+
+  
+  const $tiresButton = document.querySelector(".tires-button");
+
   $tiresButton.addEventListener("click", function () {
     $tiresButton.classList.toggle("clicked");
     if ($tiresButton.classList.contains("clicked")) {
@@ -12,13 +13,13 @@ export default function accBlock() {
     } else {
       $tiresButton.textContent = "+";
     }
+    const $chosenArticle = $acc.closest(".car-profile");
+    showTotalPrice($chosenArticle); // Update total price when toggling tires
   });
 
-  const $warranty = document.createElement("div");
-  const $warrantyInfo = document.createElement("p");
-  $warrantyInfo.textContent = "One year warranty 5000 PLN";
-  const $warrantyButton = document.createElement("button");
-  $warrantyButton.textContent = "+";
+ 
+  const $warrantyButton = document.querySelector(".warranty-button");
+
   $warrantyButton.addEventListener("click", function () {
     $warrantyButton.classList.toggle("clicked");
     if ($warrantyButton.classList.contains("clicked")) {
@@ -26,10 +27,7 @@ export default function accBlock() {
     } else {
       $warrantyButton.textContent = "+";
     }
+    const $chosenArticle = $acc.closest(".car-profile");
+    showTotalPrice($chosenArticle); // Update total price when toggling warranty
   });
-
-  $tires.append($tiresInfo, $tiresButton);
-  $warranty.append($warrantyInfo, $warrantyButton);
-  $acc.append($tires, $warranty);
-  return $acc;
 }

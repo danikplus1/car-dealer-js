@@ -1,6 +1,6 @@
 /* car-info styles */
 
-#main {
+.cars-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-items: center;
@@ -67,7 +67,9 @@
 
 /* hide styles */
 
-.hide {
+.hide,
+.hide-form,
+.hide-details {
   display: none;
 }
 

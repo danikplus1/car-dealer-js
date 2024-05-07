@@ -4,41 +4,74 @@ import changeTitle from "./changeTitle.js";
 import clientForm from "./clientForm.js";
 import accBlock from "./accessories.js";
 import purchase from "./purchase.js";
+import showTotalPrice from "./showTotalPrice.js";
 
 const $main = document.getElementById("main");
-const $clientForm = clientForm();
-$clientForm.style.display = "none";
+const $details = document.getElementById("details");
+const $clientForm = document.getElementById("client-form");
 
-const $acc = accBlock();
+const $carsList = document.createElement("div");
+$carsList.classList.add("cars-list");
+
+function createReturnBtn() {
+  const $returnBtn = document.createElement("button");
+  $returnBtn.textContent = "Return";
+  $returnBtn.addEventListener("click", () => {
+    $carsList.innerHTML = "";
+    $details.classList.toggle("hide-details");
+    $clientForm.classList.toggle("hide-form");
+    const $tiresButton = document.querySelector(".tires-button");
+    const $warrantyButton = document.querySelector(".warranty-button");
+
+    $tiresButton.classList.toggle("clicked");
+    $tiresButton.textContent = "+";
+    $warrantyButton.classList.toggle("clicked");
+    $warrantyButton.textContent = "+";
+    showAllCars();
+  });
+
+  $details.append($returnBtn);
+}
+
 const $purchase = purchase();
 
-const $returnBtn = document.createElement("button");
-$returnBtn.textContent = "Return";
-$returnBtn.addEventListener("click", showAllCars); // Assign the showAllCars function to the click event
-
-function showAllCars() {
+export default function showAllCars() {
   fetch("./json/car.json")
     .then((response) => response.json())
     .then((data) => {
-      $main.innerHTML = "";
-      $main.style.display = "grid";
+      $carsList.innerHTML = "";
+      $carsList.style.display = "grid";
       data.forEach((car) => {
         const $article = createCarProfile(car);
-        $article.addEventListener("click", function () {
-          clickHandler($article);
+        const articleClickHandler = function (event) {
+          event.stopPropagation();
+          clickHandler($article, $details);
           changeTitle($article);
-          // delete display:grid from #main
-          $main.style.display = "block";
-          $clientForm.style.display = "block";
-          $main.append($clientForm);
-          $main.append($acc);
-          $main.append($purchase);
-          $main.append($returnBtn);
-        });
-        $main.append($article);
+          $carsList.style.display = "block";
+          $clientForm.classList.toggle("hide-form");
+          $details.classList.toggle("hide-details");
+          $article.removeEventListener("click", articleClickHandler);
+          showTotalPrice($article);
+        };
+
+        $article.addEventListener("click", articleClickHandler);
+        $carsList.append($article);
       });
+
+      $main.prepend($carsList);
+
+      $details.append($purchase);
+
+      $purchase.addEventListener("click", () => {
+        $main.innerHTML = "<p>Thanks so much for your recent purchase!</p>";
+      });
+
+      $details.classList.add("hide-details");
     })
     .catch((error) => console.error("Error fetching data:", error));
 }
 
+clientForm();
+accBlock();
+createReturnBtn();
 showAllCars();
