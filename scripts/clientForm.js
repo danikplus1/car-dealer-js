@@ -15,3 +15,4 @@ export default function clientForm() {
   $day.setAttribute("min", formattedToday);
   $day.setAttribute("max", formattedTwoWeeksFromToday);
 }
+

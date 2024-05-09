@@ -5,6 +5,8 @@ import clientForm from "./clientForm.js";
 import accBlock from "./accessories.js";
 import purchase from "./purchase.js";
 import showTotalPrice from "./showTotalPrice.js";
+import verifyForm from "./verifyForm.js";
+import localStorageUpdate from "./localStorage.js";
 
 const $main = document.getElementById("main");
 const $details = document.getElementById("details");
@@ -12,7 +14,7 @@ const $clientForm = document.getElementById("client-form");
 
 const $carsList = document.createElement("div");
 $carsList.classList.add("cars-list");
-
+localStorageUpdate();
 function createReturnBtn() {
   const $returnBtn = document.createElement("button");
   $returnBtn.textContent = "Return";
@@ -27,6 +29,9 @@ function createReturnBtn() {
     $tiresButton.textContent = "+";
     $warrantyButton.classList.toggle("clicked");
     $warrantyButton.textContent = "+";
+    const errorString = document.querySelector(".error");
+    errorString.classList.toggle("hide");
+
     showAllCars();
   });
 
@@ -63,7 +68,9 @@ export default function showAllCars() {
       $details.append($purchase);
 
       $purchase.addEventListener("click", () => {
-        $main.innerHTML = "<p>Thanks so much for your recent purchase!</p>";
+        if (verifyForm()) {
+          $main.innerHTML = "<p>Thanks so much for your recent purchase!</p>";
+        }
       });
 
       $details.classList.add("hide-details");
@@ -72,6 +79,7 @@ export default function showAllCars() {
 }
 
 clientForm();
+
 accBlock();
 createReturnBtn();
 showAllCars();
