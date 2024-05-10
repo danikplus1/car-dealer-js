@@ -45,3 +45,30 @@
   border: 1px solid red;
   font-size: 24px;
 }
+
+@media screen and (max-width: 992px) {
+  .explorer .car-info {
+    grid-template-columns: 60% 20% 20%;
+    grid-template-areas:
+      "img brand model"
+      "img year mileage"
+      "img engine price";
+  }
+
+  .explorer .car-img {
+    width: 100%;
+    align-self: center;
+    grid-area: img;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .explorer .car-info {
+    grid-template-columns: 50% 50%;
+    grid-template-areas:
+      "img img"
+      "brand model"
+      "year mileage"
+      "engine price";
+  }
+}

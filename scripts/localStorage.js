@@ -8,10 +8,10 @@ export default function localStorageUpdate() {
     ).value;
 
     let formData = {
-      nameSurname,
-      pickupPlace,
-      pickupDay,
-      paymentMethod,
+      nameSurname: nameSurname,
+      pickupPlace: pickupPlace,
+      pickupDay: pickupDay,
+      paymentMethod: paymentMethod,
     };
     localStorage.setItem("formData", JSON.stringify(formData));
   }
