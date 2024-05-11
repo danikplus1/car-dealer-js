@@ -2,6 +2,12 @@
 html {
   background-color: rgb(241 241 241);
 }
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
 .cars-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -92,6 +98,5 @@ html {
     grid-template-columns: repeat(1, 1fr);
     justify-items: center;
     align-items: center;
-    grid-gap: 0px;
   }
 }
