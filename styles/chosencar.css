@@ -62,6 +62,19 @@
   }
 }
 
+.error {
+  color: rgb(162, 11, 11);
+}
+
+.acc-btn {
+  color: white;
+  background-color: rgb(11, 95, 21);
+}
+
+.clicked {
+  background-color: rgb(162, 11, 11);
+}
+
 @media screen and (max-width: 600px) {
   .explorer .car-info {
     grid-template-columns: 50% 50%;

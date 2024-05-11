@@ -40,6 +40,8 @@ function createReturnBtn() {
 
 const $purchase = purchase();
 
+let selectedCar;
+
 export default function showAllCars() {
   fetch("./json/car.json")
     .then((response) => response.json())
@@ -57,6 +59,7 @@ export default function showAllCars() {
           $details.classList.toggle("hide-details");
           $article.removeEventListener("click", articleClickHandler);
           showTotalPrice($article);
+          selectedCar = car;
         };
 
         $article.addEventListener("click", articleClickHandler);
@@ -70,6 +73,12 @@ export default function showAllCars() {
       $purchase.addEventListener("click", () => {
         if (verifyForm()) {
           $main.innerHTML = "<p>Thanks so much for your recent purchase!</p>";
+          const $orderDetails = document.createElement("p");
+          $orderDetails.classList.add("order-details");
+          $main.append($orderDetails);
+          if (selectedCar) {
+            $orderDetails.textContent = `You ordered ${selectedCar.brand} ${selectedCar.model}.`;
+          }
         }
       });
 

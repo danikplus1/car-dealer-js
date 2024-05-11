@@ -34,6 +34,8 @@ export default function localStorageUpdate() {
     } else if (paymentMethod === "cash") {
       document.getElementById("cash").checked = true;
     }
+    orderDay = pickupDay;
+    orderPlace = pickupPlace;
   }
 
   document.querySelectorAll("input, select").forEach((input) => {

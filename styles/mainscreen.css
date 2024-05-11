@@ -1,5 +1,7 @@
 /* car-info styles */
-
+html {
+  background-color: rgb(241 241 241);
+}
 .cars-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -80,11 +82,16 @@
 @media screen and (max-width: 992px) {
   .cars-list {
     grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    align-items: center;
   }
 }
 
 @media screen and (max-width: 600px) {
   .cars-list {
     grid-template-columns: repeat(1, 1fr);
+    justify-items: center;
+    align-items: center;
+    grid-gap: 0px;
   }
 }
