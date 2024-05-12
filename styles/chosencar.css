@@ -46,6 +46,11 @@
   font-size: 24px;
 }
 
+.car-profile:hover {
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
 @media screen and (max-width: 992px) {
   .explorer .car-info {
     grid-template-columns: 60% 20% 20%;
@@ -83,5 +88,9 @@
       "brand model"
       "year mileage"
       "engine price";
+  }
+
+  .explorer.car-profile {
+    width: 100vw;
   }
 }
