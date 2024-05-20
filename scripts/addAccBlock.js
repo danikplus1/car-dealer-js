@@ -1,9 +1,8 @@
 import showTotalPrice from "./showTotalPrice.js";
 
-export default function accBlock() {
+export default function addAccBlock() {
   const $acc = document.querySelector(".acc");
 
-  
   const $tiresButton = document.querySelector(".tires-button");
 
   $tiresButton.addEventListener("click", function () {
@@ -17,7 +16,6 @@ export default function accBlock() {
     showTotalPrice($chosenArticle); // Update total price when toggling tires
   });
 
- 
   const $warrantyButton = document.querySelector(".warranty-button");
 
   $warrantyButton.addEventListener("click", function () {

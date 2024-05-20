@@ -1,3 +1,14 @@
+let orderDay;
+let orderPlace;
+
+export function getOrderDay() {
+  return orderDay;
+}
+
+export function getOrderPlace() {
+  return orderPlace;
+}
+
 export default function localStorageUpdate() {
   function saveInputValues() {
     const nameSurname = document.getElementById("name-surname").value;

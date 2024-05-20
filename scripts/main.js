@@ -2,8 +2,8 @@ import createCarProfile from "./carProfile.js";
 import clickHandler from "./clickHandler.js";
 import changeTitle from "./changeTitle.js";
 import clientForm from "./clientForm.js";
-import accBlock from "./accessories.js";
-import purchase from "./purchase.js";
+import addAccBlock from "./addAccBlock.js";
+import createPurchaseButton from "./createPurchaseButton.js";
 import showTotalPrice from "./showTotalPrice.js";
 import verifyForm from "./verifyForm.js";
 import localStorageUpdate from "./localStorage.js";
@@ -11,6 +11,8 @@ import localStorageUpdate from "./localStorage.js";
 const $main = document.getElementById("main");
 const $details = document.getElementById("details");
 const $clientForm = document.getElementById("client-form");
+const $orderDetails = document.querySelector("#order-details");
+const $orderText = document.querySelector("#order-text");
 
 const $carsList = document.createElement("div");
 $carsList.classList.add("cars-list");
@@ -20,25 +22,30 @@ function createReturnBtn() {
   $returnBtn.textContent = "Return";
   $returnBtn.addEventListener("click", () => {
     $carsList.innerHTML = "";
-    $details.classList.toggle("hide-details");
-    $clientForm.classList.toggle("hide-form");
+    $details.classList.add("hide-details");
+    $clientForm.classList.add("hide-form");
     const $tiresButton = document.querySelector(".tires-button");
     const $warrantyButton = document.querySelector(".warranty-button");
 
-    $tiresButton.classList.toggle("clicked");
+    $tiresButton.classList.remove("clicked");
     $tiresButton.textContent = "+";
-    $warrantyButton.classList.toggle("clicked");
+    $warrantyButton.classList.remove("clicked");
     $warrantyButton.textContent = "+";
     const errorString = document.querySelector(".error");
     errorString.classList.toggle("hide");
 
+    $orderDetails.classList.add("hide");
+
     showAllCars();
+    $details.append(returnBtn);
   });
 
-  $details.append($returnBtn);
+  return $returnBtn;
 }
 
-const $purchase = purchase();
+const returnBtn = createReturnBtn();
+
+const $purchaseBtn = createPurchaseButton();
 
 let selectedCar;
 
@@ -68,27 +75,31 @@ export default function showAllCars() {
 
       $main.prepend($carsList);
 
-      $details.append($purchase);
+      $details.append($purchaseBtn);
 
-      $purchase.addEventListener("click", () => {
+      $purchaseBtn.addEventListener("click", () => {
+        $carsList.style.display = "none";
+        $clientForm.classList.add("hide-form");
+        $details.classList.add("hide-details");
         if (verifyForm()) {
-          $main.innerHTML = "<p>Thanks so much for your recent purchase!</p>";
-          const $orderDetails = document.createElement("p");
-          $orderDetails.classList.add("order-details");
-          $main.append($orderDetails);
+          $orderDetails.classList.remove("hide");
+
           if (selectedCar) {
-            $orderDetails.textContent = `You ordered ${selectedCar.brand} ${selectedCar.model}.`;
+            const totalPriceString =
+              document.querySelector(".total-price").textContent;
+            const totalPrice = parseInt(totalPriceString.slice(12, 18));
+            $orderText.textContent = `Thanks so much for your recent purchase! 
+            You ordered ${selectedCar.brand} ${selectedCar.model} for ${totalPrice} zl.`;
           }
+          $orderDetails.append(returnBtn);
         }
       });
-
-      $details.classList.add("hide-details");
     })
     .catch((error) => console.error("Error fetching data:", error));
 }
 
 clientForm();
+addAccBlock();
+$details.append(returnBtn);
 
-accBlock();
-createReturnBtn();
 showAllCars();
