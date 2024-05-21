@@ -32,7 +32,7 @@ function createReturnBtn() {
     $warrantyButton.classList.remove("clicked");
     $warrantyButton.textContent = "+";
     const errorString = document.querySelector(".error");
-    errorString.classList.toggle("hide");
+    errorString.classList.add("hide");
 
     $orderDetails.classList.add("hide");
 
@@ -78,10 +78,10 @@ export default function showAllCars() {
       $details.append($purchaseBtn);
 
       $purchaseBtn.addEventListener("click", () => {
-        $carsList.style.display = "none";
-        $clientForm.classList.add("hide-form");
-        $details.classList.add("hide-details");
         if (verifyForm()) {
+          $carsList.style.display = "none";
+          $clientForm.classList.add("hide-form");
+          $details.classList.add("hide-details");
           $orderDetails.classList.remove("hide");
 
           if (selectedCar) {
@@ -92,6 +92,7 @@ export default function showAllCars() {
             You ordered ${selectedCar.brand} ${selectedCar.model} for ${totalPrice} zl.`;
           }
           $orderDetails.append(returnBtn);
+        } else {
         }
       });
     })
