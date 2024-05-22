@@ -20,11 +20,11 @@ export default function showTotalPrice() {
 
   acc.forEach((button) => {
     button.addEventListener("click", () => {
-      if ($tiresButton.textContent === "-") {
+      if ($tiresButton.classList.contains("clicked")) {
         totalPrice += 2000;
       }
 
-      if ($warrantyButton.textContent === "-") {
+      if ($warrantyButton.classList.contains("clicked")) {
         totalPrice += 5000;
       }
 

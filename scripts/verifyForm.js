@@ -5,9 +5,10 @@ export default function verifyForm() {
   const paymentMethod = document.querySelector('input[name="payment"]:checked');
   const errorString = document.querySelector(".error");
 
-  if (!nameSurname || !pickupPlace || !pickupDay || !paymentMethod) {
+  if (!nameSurname) {
     errorString.classList.remove("hide");
-    errorString.textContent = "Please fill out all the required fields.";
+    errorString.textContent = "Please enter your name and surname.";
+    document.getElementById("name-surname").focus();
     return false;
   }
 
@@ -16,8 +17,32 @@ export default function verifyForm() {
     errorString.classList.remove("hide");
     errorString.textContent =
       "Please enter both name and surname separated by a space.";
+    document.getElementById("name-surname").focus();
     return false;
   }
 
+  if (!pickupPlace) {
+    errorString.classList.remove("hide");
+    errorString.textContent = "Please choose a pick-up place.";
+    document.getElementById("pickup-place").focus();
+    return false;
+  }
+
+  if (!pickupDay) {
+    errorString.classList.remove("hide");
+    errorString.textContent =
+      "Please choose a pick-up day no later than two weeks from today.";
+    document.getElementById("day").focus();
+    return false;
+  }
+
+  if (!paymentMethod) {
+    errorString.classList.remove("hide");
+    errorString.textContent = "Please choose a payment method.";
+    document.getElementById("leasing").focus();
+    return false;
+  }
+
+  errorString.classList.add("hide");
   return true;
 }

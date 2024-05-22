@@ -1,7 +1,7 @@
 import createCarProfile from "./carProfile.js";
 import clickHandler from "./clickHandler.js";
 import changeTitle from "./changeTitle.js";
-import clientForm from "./clientForm.js";
+import checkPickupDay from "./checkPickupDay.js";
 import addAccBlock from "./addAccBlock.js";
 import createPurchaseButton from "./createPurchaseButton.js";
 import showTotalPrice from "./showTotalPrice.js";
@@ -17,6 +17,7 @@ const $orderText = document.querySelector("#order-text");
 const $carsList = document.createElement("div");
 $carsList.classList.add("cars-list");
 localStorageUpdate();
+
 function createReturnBtn() {
   const $returnBtn = document.createElement("button");
   $returnBtn.textContent = "Return";
@@ -99,8 +100,7 @@ export default function showAllCars() {
     .catch((error) => console.error("Error fetching data:", error));
 }
 
-clientForm();
+checkPickupDay();
 addAccBlock();
 $details.append(returnBtn);
-
 showAllCars();

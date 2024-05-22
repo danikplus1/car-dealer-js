@@ -1,22 +1,10 @@
-let orderDay;
-let orderPlace;
-
-export function getOrderDay() {
-  return orderDay;
-}
-
-export function getOrderPlace() {
-  return orderPlace;
-}
-
 export default function localStorageUpdate() {
   function saveInputValues() {
     const nameSurname = document.getElementById("name-surname").value;
     const pickupPlace = document.getElementById("pickup-place").value;
     const pickupDay = document.getElementById("day").value;
-    const paymentMethod = document.querySelector(
-      'input[name="payment"]:checked'
-    ).value;
+    const paymentMethod =
+      document.querySelector('input[name="payment"]:checked')?.value || "";
 
     let formData = {
       nameSurname: nameSurname,
@@ -24,6 +12,7 @@ export default function localStorageUpdate() {
       pickupDay: pickupDay,
       paymentMethod: paymentMethod,
     };
+
     localStorage.setItem("formData", JSON.stringify(formData));
   }
 
@@ -31,25 +20,26 @@ export default function localStorageUpdate() {
     const loadedData = localStorage.getItem("formData");
     const formData = loadedData ? JSON.parse(loadedData) : {};
 
-    const nameSurname = formData.nameSurname || "";
-    const pickupPlace = formData.pickupPlace || "";
-    const pickupDay = formData.pickupDay || "";
+    document.getElementById("name-surname").value = formData.nameSurname || "";
+    document.getElementById("pickup-place").value = formData.pickupPlace || "";
+    document.getElementById("day").value = formData.pickupDay || "";
+
     const paymentMethod = formData.paymentMethod || "";
-
-    document.getElementById("name-surname").value = nameSurname;
-    document.getElementById("pickup-place").value = pickupPlace;
-    document.getElementById("day").value = pickupDay;
-
     if (paymentMethod === "leasing") {
       document.getElementById("leasing").checked = true;
     } else if (paymentMethod === "cash") {
       document.getElementById("cash").checked = true;
     }
-    orderDay = pickupDay;
-    orderPlace = pickupPlace;
   }
 
   document.querySelectorAll("input, select").forEach((input) => {
+    if (
+      input.type === "text" ||
+      input.type === "date" ||
+      input.tagName === "SELECT"
+    ) {
+      input.addEventListener("input", saveInputValues);
+    }
     input.addEventListener("change", saveInputValues);
   });
 
