@@ -1,5 +1,4 @@
 import createCarProfile from "./carProfile.js";
-import clickHandler from "./clickHandler.js";
 import changeTitle from "./changeTitle.js";
 import checkPickupDay from "./checkPickupDay.js";
 import addAccBlock from "./addAccBlock.js";
@@ -17,6 +16,19 @@ const $orderText = document.querySelector("#order-text");
 const $carsList = document.createElement("div");
 $carsList.classList.add("cars-list");
 localStorageUpdate();
+
+function clickHandler($article) {
+  const $allArticles = document.querySelectorAll(".car-profile");
+
+  $allArticles.forEach((article) => {
+    if (article !== $article) {
+      article.classList.add("hide");
+      article.remove();
+    }
+  });
+
+  $article.classList.add("explorer");
+}
 
 function createReturnBtn() {
   const $returnBtn = document.createElement("button");
@@ -39,6 +51,10 @@ function createReturnBtn() {
 
     showAllCars();
     $details.append(returnBtn);
+
+    if ($purchaseBtn.classList.contains("bought")) {
+      document.getElementById("client-form").reset();
+    }
   });
 
   return $returnBtn;

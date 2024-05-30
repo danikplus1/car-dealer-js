@@ -4,6 +4,7 @@ export default function createPurchaseButton() {
   $purchaseBtn.classList.add("purchase-btn");
   $purchaseBtn.addEventListener("click", () => {
     localStorage.removeItem("formData");
+    $purchaseBtn.classList.add("bought");
   });
 
   return $purchaseBtn;
