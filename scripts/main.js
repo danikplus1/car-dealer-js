@@ -52,8 +52,9 @@ function createReturnBtn() {
     showAllCars();
     $details.append(returnBtn);
 
-    if ($purchaseBtn.classList.contains("bought")) {
+    if ($purchaseBtn.classList.contains("bought") && $orderText.lenght !== 0) {
       document.getElementById("client-form").reset();
+      $purchaseBtn.classList.remove("bought");
     }
   });
 
