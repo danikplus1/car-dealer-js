@@ -1,0 +1,102 @@
+[
+  {
+    "number": 1,
+    "price": 25000,
+    "image": "https://picsum.photos/400/200?random=1",
+    "brand": "Toyota",
+    "year": 2018,
+    "model": "Camry",
+    "engine": 1.8,
+    "mileage": 50000
+  },
+  {
+    "number": 2,
+    "price": 30000,
+    "image": "https://picsum.photos/400/200?random=2",
+    "brand": "Honda",
+    "year": 2020,
+    "model": "Accord",
+    "engine": 2.0,
+    "mileage": 35000
+  },
+  {
+    "number": 3,
+    "price": 18000,
+    "image": "https://picsum.photos/400/200?random=3",
+    "brand": "Ford",
+    "year": 2017,
+    "model": "Focus",
+    "engine": 1.6,
+    "mileage": 60000
+  },
+  {
+    "number": 4,
+    "price": 35000,
+    "image": "https://picsum.photos/400/200?random=4",
+    "brand": "Chevrolet",
+    "year": 2019,
+    "model": "Malibu",
+    "engine": 1.9,
+    "mileage": 40000
+  },
+  {
+    "number": 5,
+    "price": 28000,
+    "image": "https://picsum.photos/400/200?random=5",
+    "brand": "Nissan",
+    "year": 2020,
+    "model": "Altima",
+    "engine": 1.6,
+    "mileage": 30000
+  },
+  {
+    "number": 6,
+    "price": 22000,
+    "image": "https://picsum.photos/400/200?random=6",
+    "brand": "Volkswagen",
+    "year": 2018,
+    "model": "Jetta",
+    "engine": 1.6,
+    "mileage": 55000
+  },
+  {
+    "number": 7,
+    "price": 32000,
+    "image": "https://picsum.photos/400/200?random=7",
+    "brand": "BMW",
+    "year": 2021,
+    "model": "3 Series",
+    "engine": 2.2,
+    "mileage": 25000
+  },
+  {
+    "number": 8,
+    "price": 24000,
+    "image": "https://picsum.photos/400/200?random=8",
+    "brand": "Kia",
+    "year": 2019,
+    "model": "Optima",
+    "engine": 1.8,
+    "mileage": 45000
+  },
+  {
+    "number": 9,
+    "price": 26000,
+    "image": "https://picsum.photos/400/200?random=9",
+    "brand": "Mazda",
+    "year": 2020,
+    "model": "6",
+    "engine": 1.8,
+    "mileage": 38000
+  },
+  {
+    "number": 10,
+    "price": 30000,
+    "image": "https://picsum.photos/400/200?random=10",
+    "brand": "Audi",
+    "year": 2019,
+    "model": "A4",
+    "engine": 2.0,
+    "mileage": 32000
+  }
+]

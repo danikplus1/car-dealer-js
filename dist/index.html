@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cars Dealer | Używane samochody</title>
+    <link rel="icon" type="image/x-icon" href="/img/icon-car.svg" />
+    <link href="style.css" rel="stylesheet" />
+    <!-- <link rel="stylesheet" type="text/css" href="/styles/mainscreen.css" />
+    <link rel="stylesheet" type="text/css" href="/styles/chosencar.css" /> -->
+    <script defer type="module" src="./scripts/main.js"></script>
+  </head>
+  <body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="container">
+      <main id="main" class="w-full p-4">
+        <div id="order-details" class="invisible px-5">
+          <p id="order-text"></p>
+        </div>
+        <form id="client-form" class="client-form invisible pt-5 gap-4">
+          <input type="radio" id="leasing" name="payment" value="leasing" />
+          <label
+            for="leasing"
+            class="inline-block text-sm font-medium leading-6 text-gray-900"
+            >Leasing</label
+          >
+          <input type="radio" id="cash" name="payment" value="cash" />
+          <label
+            for="cash"
+            class="inline-block text-sm font-medium leading-6 text-gray-900"
+            >Cash</label
+          >
+
+          <label
+            for="name-surname"
+            class="inline-block text-sm font-medium leading-6 text-gray-900"
+            >Name & Surname</label
+          >
+          <input
+            type="text"
+            name="name-surname"
+            id="name-surname"
+            class="relative mt-2 rounded-md shadow-sm"
+          />
+
+          <label
+            for="pickup-place"
+            class="inline-block text-sm font-medium leading-6 text-gray-900"
+            >Pick-up place</label
+          >
+          <select name="pickup-place" id="pickup-place">
+            <option value="">Please choose a pick-up place</option>
+            <option value="warsaw-wola">Warsaw Wola</option>
+            <option value="warsaw-ochota">Warsaw Ochota</option>
+            <option value="warsaw-mokotow">Warsaw Mokotow</option>
+          </select>
+          <label
+            for="day"
+            class="inline-block text-sm font-medium leading-6 text-gray-900"
+            >Pick-up day</label
+          >
+          <input type="date" id="day" name="day" />
+          <p class="error invisible"></p>
+        </form>
+        <div id="details" class="invisible pt-5">
+          <div class="acc">
+            <div>
+              <p class="tiresInfo">Winter tires 2000 PLN</p>
+              <button class="tires-button acc-btn">+</button>
+            </div>
+            <div>
+              <p class="warrantyInfo">One year warranty 5000 PLN</p>
+              <button class="warranty-button acc-btn">+</button>
+            </div>
+          </div>
+          <p class="total-price invisible pt-5"></p>
+        </div>
+       
+      </main>
+    </div>
+  </body>
+</html>
